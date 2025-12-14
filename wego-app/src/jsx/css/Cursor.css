@@ -1,0 +1,40 @@
+/* Cursor.css */
+.custom-cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    z-index: 9999;
+    position: fixed;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    z-index: 9999;
+
+}
+
+.custom-cursor.hidden {
+    opacity: 0;
+}
+
+
+.custom-cursor.cursor-hover {
+    width: 80px;
+    height: 80px;
+    background: black;
+}
+
+.cursor-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-family: sans-serif;
+    pointer-events: none;
+}

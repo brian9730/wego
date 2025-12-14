@@ -1,0 +1,503 @@
+/* ========== 전체 페이지 기본 영역 ========== */
+.subway-map {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    overflow: visible;
+    color: #222;
+    font-family: 'Pretendard', sans-serif;
+    margin-top: 50px;
+  }
+  
+  /* SVG 스크롤 컨테이너 */
+  .svg-scroll-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    cursor: grab;
+    background: #fff;
+  }
+  
+  /* SVG 실제 맵 */
+  .svg-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  [data-line] {
+    transition: opacity 0.25s ease, stroke-width 0.25s ease;
+  }  
+  
+  /* 활성/비활성 스타일 */
+  [data-line].active {
+    opacity: 1 !important;
+    transition: opacity 0.25s ease;
+  }
+  [data-line].dimmed {
+    opacity: 0.35;
+    transition: opacity 0.25s ease;
+  }
+  
+  /* ========== React 기반 legend UI ========== */
+  .map-legend {
+    position: fixed;
+    top: 80px;
+    left: 24px;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    max-height: 70vh;
+    overflow-y: auto;
+    margin-top: 60px;
+  }
+  
+  /* legend 개별 버튼 */
+  .legend-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 0 12px;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background: transparent;
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  /* hover */
+  .legend-item:hover {
+    transform: scale(1.04);
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  /* 선택된 노선 */
+  .legend-item.selected {
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 스크롤바 스타일 */
+  .map-legend::-webkit-scrollbar {
+    width: 4px;
+  }
+  .map-legend::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  .map-legend::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* ========== FAB 버튼 ========== */
+.wego-fab {
+    position: fixed;
+    bottom: 100px; 
+    right: 30px;
+    z-index: 50;
+  }
+  
+  .fab-main {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f7f7f7;
+    color: #333;
+    font-size: 22px;
+    font-weight: bold;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.25s ease;
+  }
+  
+  .fab-main:hover {
+    background: #e9e9e9;
+    transform: scale(1.08);
+  }
+  
+  /* ========== 검색 오버레이 & 모달 ========== */
+  .wego-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 40;
+  }
+  
+  .wego-search-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    color: #000;
+    padding: 24px;
+    border-radius: 12px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 45;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.25s ease;
+  }
+  
+  .search-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  
+  .search-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .search-list li {
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .search-list li:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .search-close {
+    display: block;
+    margin: 12px auto 0;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .search-close:hover {
+    background: #000;
+  }
+  
+  /* 등장 애니메이션 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -46%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+  }  
+  
+  /* ========== 검색 오버레이 ========== */
+  .wego-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    z-index: 30;
+  }
+  
+  /* 검색창 모달 */
+  .wego-search-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    max-width: 90vw;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .search-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #222;
+    text-align: center;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #222;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .search-input:focus {
+    border-color: #999;
+  }
+  
+  .search-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 220px;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 8px;
+  }
+  
+  .search-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+  }
+  
+  .search-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .station-lines {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .station-lines .line-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  /* 닫기 버튼 */
+  .search-close {
+    margin-top: 8px;
+    padding: 8px;
+    background: #e0e0e0;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .search-close:hover {
+    background: #ccc;
+  }
+  
+  /* 반응형 */
+  @media (max-width: 768px) {
+    .map-legend {
+      top: 70px;
+      left: 12px;
+      gap: 4px;
+      padding: 6px;
+      border-radius: 8px;
+    }
+  
+    .legend-item {
+      font-size: 12px;
+      height: 26px;
+      padding: 0 10px;
+    }
+  
+    .wego-search-modal {
+      width: 280px;
+      padding: 16px;
+    }
+  }
+  
+  /* ========== 역 클릭 팝업 ========== */
+.station-popup {
+    position: absolute;
+    transform: translate(-50%, -150%);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    padding: 10px 14px;
+    text-align: center;
+    min-width: 150px;
+    z-index: 9999; /* ✅ 맨 위로 올리기 */
+    border-top: 4px solid #2b7fff;
+  }
+  
+  .popup-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #222;
+  }
+  
+  .popup-lines {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+  
+  .popup-line {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 2px 6px;
+  }
+  
+  .popup-btn {
+    background: #2b7fff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 0;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .popup-btn:hover {
+    background: #1d5ede;
+  }
+  
+  /* 노선 배지 (팝업 & 검색창 공통) */
+  .search-station-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .station-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  .station-lines {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .station-lines .popup-line-circle {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  
+/* ================= 팝업 원형 배지 ================= */
+.popup-line-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 4px; /* ✅ 글자랑 간격 */
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); /* ✅ 살짝 입체감 */
+  }
+  
+  /* ================= 자동완성 목록에서 노선 배지 표시 ================= */
+  .search-station-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  
+  .search-station-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .station-lines {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .station-lines .popup-line-circle {
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+  }
+  
+  /* ================= 팝업 말풍선 꼬리 ================= */
+  .station-popup::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ================= 팝업 등장 애니메이션 ================= */
+  @keyframes popupFade {
+    from { opacity: 0; transform: translate(-50%, -90%); }
+    to { opacity: 1; transform: translate(-50%, -100%); }
+  }
+  
+  .station-popup {
+    animation: popupFade 0.25s ease;
+  }
+  
+  /* ================= 반응형 ================= */
+  @media (max-width: 600px) {
+    .station-popup {
+      min-width: 130px;
+      font-size: 0.85rem;
+    }
+  
+    .popup-line-circle {
+      width: 18px;
+      height: 18px;
+      font-size: 0.65rem;
+    }
+  
+    .station-lines .popup-line-circle {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  /* ========== 역 마커 스타일 ========== */
+.station-node {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .station-node:hover {
+    fill: currentColor;
+    stroke: #fff;
+  }
+  

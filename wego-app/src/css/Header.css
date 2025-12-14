@@ -1,0 +1,137 @@
+/* ------------------------------
+   헤더 (#111 배경, 흰 글자)
+------------------------------ */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1002;
+    background-color: #111; /* 슬라이드 메뉴와 동일 색상 */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  /* 왼쪽 영역: 로고 */
+  .header__left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  /* 가운데 영역: 검색창 */
+  .header__center {
+    flex: 1; /* 중앙 영역이 남은 공간을 차지하도록 */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-input {
+    width: 300px;
+    max-width: 400px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* 오른쪽 영역: 햄버거, 언어, 로그인 아이콘 */
+  .header__right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* 아이콘 공통 스타일 */
+  .icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 40px;
+  }
+  
+  /* ------------------------------
+     오버레이 (화면 어둡게)
+  ------------------------------ */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  /* 슬라이드 메뉴 (오른쪽 → 왼쪽) */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -400px; /* 처음에 화면 밖 */
+    width: 350px;
+    height: 100vh;
+    background-color: #111; /* 헤더와 동일 색상 */
+    color: #fff;
+    padding: 20px;
+    z-index: 1001;
+    transition: right 0.5s ease;
+    /* remove display:flex on menu header if causing issues */
+  }
+  
+  /* 슬라이드 메뉴 열릴 때 */
+  .side-menu.open {
+    right: 0;
+  }
+  
+  /* 닫기(X) 아이콘 - 절대 위치로 슬라이드 메뉴 안에서 상단 오른쪽에 고정 */
+  .side-menu__top {
+    position: relative; /* 부모 컨테이너에 relative 부여 */
+    height: 40px; /* 높이 설정 */
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1005;
+    font-size: 28px;
+    cursor: pointer;
+  }  
+  
+  .side-menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .side-menu__item {
+    font-size: 20px;
+    margin: 15px 0;
+    cursor: pointer;
+  }
+  
+  .side-menu__item:hover {
+    color: #bbb;
+  }
+
+  /* 메뉴 항목 안의 화살표 */
+.item-arrow {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-left: 8px;
+  }
+  
+  /* 메뉴 항목에 마우스 오버 시 화살표 표시 */
+  .side-menu__item:hover .item-arrow {
+    opacity: 1;
+  }
+  
+  
+
+/* Light Mode Overrides */
+body.light .header { background-color: #fff; color: #222; }
+body.light .header-title { color: #222; }

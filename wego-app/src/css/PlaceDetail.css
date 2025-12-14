@@ -1,0 +1,118 @@
+.place-detail-container {
+  position: relative;
+  padding: 100px 30px 60px;  /* ✅ 상단 패딩 추가! */
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  color: #ffffff;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+.place-image {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1;
+  position: relative;
+}
+
+.place-info {
+  padding: 0 12px;
+}
+
+.place-name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.place-address {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.place-description {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: rgb(33, 33, 33) !important;
+}
+
+.place-id {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin-top: 8px;
+}
+
+.place-tel,
+.place-homepage,
+.place-coords,
+.place-zipcode {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.place-homepage a {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.place-homepage a:hover {
+  color: #0ea5e9;
+}
+
+
+
+@media (max-width: 600px) {
+  .place-name {
+    font-size: 22px;
+  }
+  .place-address {
+    font-size: 16px;
+  }
+  .place-description {
+    font-size: 15px;
+  }
+}
+
+
+
+.save-button-wrapper {
+  display: flex;
+  justify-content: flex-end;   /* 🔥 오른쪽 정렬 */
+  padding: 0 12px;
+  margin-top: -4px;
+  margin-bottom: 16px;
+}
+
+
+.save-button {
+  background-color: #ff766c;
+  border: none;
+  border-radius: 6px;              /* 기존처럼 살짝 둥글게 */
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  display: flex;                   /* 아이콘 + 텍스트 가로 정렬 */
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #ff766cb0;
+}
+
+.save-button .material-icons {
+  font-size: 20px;
+}
+
+

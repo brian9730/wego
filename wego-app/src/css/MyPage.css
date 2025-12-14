@@ -1,0 +1,569 @@
+body.dark {
+  background-color: #000000 !important;
+}
+
+/* 컨테이너 및 공통 배경 */
+.container-custom {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding-top: 80px;
+}
+
+body.dark .container-custom {
+  background: #000000;
+}
+
+body.light .container-custom {
+  background: #ffffff;
+}
+
+/* 사이드바 */
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  height: calc(100vh - 80px);
+  overflow-y: auto;  /* 세로 스크롤 가능 */
+}
+
+body.dark .sidebar {
+  background: #1F2937;
+  color: #ffffff;
+}
+
+body.light .sidebar {
+  background: #f4f4f5;
+  color: #111827;
+}
+
+/* 텍스트 및 제목 */
+.activity-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+body.dark .activity-title {
+  color: #ffffff;
+}
+
+body.light .activity-title {
+  color: #111827;
+}
+
+.activity-bar {
+  width: 100%;
+  height: 2px;
+}
+
+body.dark .activity-bar {
+  background-color: #ffffff;
+}
+
+body.light .activity-bar {
+  background-color: #111827;
+}
+
+.activity-bar2 {
+  width: 75%;
+  height: 1px;
+}
+
+body.dark .activity-bar2 {
+  background-color: #ffffff;
+}
+
+body.light .activity-bar2 {
+  background-color: #999;
+}
+
+.activity-bar3 {
+  width: 100%;
+  height: 1px;
+}
+
+body.dark .activity-bar3 {
+  background-color: #ffffff;
+}
+
+body.light .activity-bar3 {
+  background-color: #999;
+}
+
+/* 프로필 관련 */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.profile-img-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  margin-left: -10px;
+}
+
+.profile-img {
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border: 3px solid white;
+
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.profile-nickname {
+  font-size: 14px;
+}
+
+body.dark .profile-nickname {
+  color: #9ca3af;
+}
+
+body.light .profile-nickname {
+  color: #6b7280;
+}
+
+.nickname-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 2px;
+  margin-top: 10px;
+}
+
+.nickname,
+.fixed-nick {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.edit-profile-btn1 {
+  width: 250px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+body.dark .edit-profile-btn1 {
+  background-color: #e5e7eb;
+}
+body.dark .edit-profile-btn1:hover {
+  background-color: #d1d5db;
+}
+body.light .edit-profile-btn1 {
+  background-color: #111827;
+  color: white;
+}
+body.light .edit-profile-btn1:hover {
+  background-color: #1f2937;
+}
+
+.edit-profile-btn2 {
+  width: 250px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+body.dark .edit-profile-btn2 {
+  background-color: #e5e7eb;
+}
+body.dark .edit-profile-btn2:hover {
+  background-color: #d1d5db;
+}
+body.light .edit-profile-btn2 {
+  background-color: #111827;
+  color: white;
+}
+body.light .edit-profile-btn2:hover {
+  background-color: #1f2937;
+}
+
+.edit-profile-btn3 {
+  width: 250px;
+  margin-top: 80px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+body.dark .edit-profile-btn3 {
+  background-color: #e5e7eb;
+}
+body.dark .edit-profile-btn3:hover {
+  background-color: #d1d5db;
+}
+body.light .edit-profile-btn3 {
+  background-color: #111827;
+  color: white;
+}
+body.light .edit-profile-btn3:hover {
+  background-color: #1f2937;
+}
+
+.profile-info {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.profile-info p {
+  margin: 2px 0;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.follow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.follow-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 16px;
+}
+
+.follow-info div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 콘텐츠 영역 */
+.content {
+  flex: 1;
+  margin-left: 300px;
+  padding: 20px;
+}
+
+body.dark .content {
+  background: #000000;
+}
+
+body.light .content {
+  background: #ffffff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.saved-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 400px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.saved-card:hover {
+  transform: scale(1.02);
+}
+
+.saved-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+}
+
+.saved-card:hover .saved-card-overlay {
+  opacity: 1;
+}
+
+.saved-card-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.saved-card-date {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.saved-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.saved-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.content.center-tab {
+  margin-top: 30px; /* 원하는 만큼 아래로 내림 */
+}
+/* 탭 버튼 */
+.center-tab {
+  width: calc(100% - 300px);
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin:10px 0;
+}
+
+.tab-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  width: auto;
+  min-width: 100px;
+  margin-right: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.dark .tab-buttons button {
+  background-color: #f0f0f0;
+}
+
+body.dark .tab-buttons button:hover {
+  background-color: #E5E7EB;
+}
+
+body.light .tab-buttons button {
+  background-color: #f3f4f6;
+}
+
+body.light .tab-buttons button:hover {
+  background-color: #e5e7eb;
+}
+
+.tab-buttons button.active {
+  background-color: #4B5563;
+  font-weight: bold;
+  color: white;
+  border: 2px solid #9CA3AF;
+}
+
+/* 댓글 */
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: 1px solid;
+}
+
+body.dark .comment-item {
+  background: #ffffff;
+  color: #111827;
+  border-color: #ddd;
+}
+
+body.light .comment-item {
+  background: #f9f9f9;
+  color: #111827;
+  border-color: #ccc;
+}
+
+/* sns */
+.sns-links {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  background: none;
+  border: none;
+  padding: 0;
+  /* 중앙 정렬 추가 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sns-links a {
+  text-decoration: none;
+}
+
+body.dark .sns-links a {
+  color: #ccc;
+}
+
+body.light .sns-links a {
+  color: #444;
+}
+
+.sns-text-links p {
+  font-size: 14px;
+  margin: 2px 0;
+  text-align: center; /* 추가 */
+}
+
+body.dark .sns-text-links p {
+  color: white;
+}
+
+body.light .sns-text-links p {
+  color: #111827;
+}
+
+.sns-links a:hover {
+  text-decoration: underline;
+}
+
+.sns-none {
+  font-style: italic;
+}
+
+body.dark .sns-none {
+  color: #aaa;
+}
+
+body.light .sns-none {
+  color: #666;
+}
+
+/* 정렬용 */
+.profile-info,
+.follow-container,
+.profile-stats {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.bio-box {
+  margin-top: 20px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  /* 추가할 부분 */
+  width: 250px;      /* 너비 고정 */
+  height: 150px;      /* 높이 고정 */
+  display: flex;     /* 세로 중앙 정렬 위해 flex 사용 */
+  overflow: hidden;  /* 글자가 넘치면 숨김 */
+  white-space: nowrap; /* 한 줄로 표시 */
+  text-overflow: ellipsis; /* 넘칠 때 ... 처리 */
+}
+
+.bio-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.bio-content {
+  font-size: 12px;
+  color: #555;
+  white-space: pre-line;
+}
+
+
+
+/* 댓글 리스트 */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 댓글 카드 */
+.comment-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 14px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.comment-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.comment-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.comment-post-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 0 6px 0;
+  color: #333;
+}
+
+.comment-text {
+  font-size: 16px;
+  margin: 0 0 6px 0;
+  color: #555;
+}
+
+.comment-date {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 0;
+}

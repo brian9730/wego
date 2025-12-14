@@ -1,0 +1,150 @@
+/* 전체 페이지 */
+.setting-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 24px 60px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 중앙 정렬된 다크모드 스위치 영역 */
+.setting-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  gap: 16px; /* 텍스트와 토글 사이 간격 */
+  flex-direction: row; 
+}
+
+/* 다크모드 텍스트 */
+.setting-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+/* 토글 스위치 */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  background-color: #ccc;
+  border-radius: 32px;
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.slider .icon {
+  color: #fff;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+.switch input:checked + .slider {
+  background-color: #e74c3c;
+}
+
+/* 아코디언 카드 전체 */
+.setting-card {
+  width: 100%;
+  max-width: 700px;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.setting-card:last-of-type {
+  margin-bottom: 160px; /* 마지막 카드 아래 더 넉넉하게 */
+}
+
+/* 클릭 영역 */
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.accordion-header h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 펼쳐지는 내용 */
+.accordion-body {
+  margin-top: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 모드별 스타일 */
+body.light .setting-page {
+  background-color: #f4f6f8;
+  color: #222;
+}
+body.light .setting-card {
+  background-color: #fff;
+}
+body.light .slider {
+  background-color: #bbb;
+}
+body.light .switch input:checked + .slider {
+  background-color: #222;
+}
+
+body.dark .setting-page {
+  background-color: #121212;
+  color: #eee;
+}
+body.dark .setting-card {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+/* 간단한 등장 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-label {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #eee;
+  text-align: center;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+/* 라이트/다크 모드 대응 (선택사항) */
+body.light .page-label {
+  color: #1e1e1e;
+}
+body.dark .page-label {
+  color: #eee;
+}

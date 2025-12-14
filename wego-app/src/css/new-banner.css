@@ -1,0 +1,54 @@
+:root {
+  --bg-color: #121212;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent: #E0FD60;
+}
+
+.dark-theme {
+  background-color: var(--bg-color);
+  color: var(--text-secondary);
+  padding: 80px 0;
+  min-height: 90vh;
+  font-family: 'Segoe UI', 'Pretendard', sans-serif;
+}
+
+.banner-text {
+  padding: 0 20px;
+}
+
+.cuberto-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.cuberto-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.cuberto-btn {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.cuberto-btn:hover {
+  background-color: var(--accent);
+  color: var(--bg-color);
+}
+
+.txt-rotate .wrap {
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 0 5px;
+}

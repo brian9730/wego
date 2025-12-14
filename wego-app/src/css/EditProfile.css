@@ -1,0 +1,180 @@
+.divider-bar {
+  width: 100%;
+  height: 2px;
+  background-color: black; /* 기본 검정 */
+  margin-bottom: 20px;
+  border-radius: 1px;
+}
+
+body.dark .divider-bar {
+  background-color: white;
+}
+
+.divider-bar2 {
+  width: 80%;
+  height: 2px;
+  background-color: gray; /* 기본 검정 */
+  border-radius: 1px;
+  margin: 40px auto;
+}
+
+body.dark .divider-bar2 {
+  background-color: white;
+}
+
+/* 컨테이너 및 공통 배경 */
+.edit-profile-container {
+  width: 100vw;
+  margin: 0;
+  padding: 120px 40px 40px 40px; /* 헤더 공간 확보 */
+  box-sizing: border-box;
+}
+
+/* 라이트모드 스타일 */
+body.light .edit-profile-container {
+  background: #f9f9f9;
+  color: #000000;
+}
+
+.edit-profile-container h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+
+/* 다크모드 스타일 */
+body.dark .edit-profile-container {
+  background: #121212;
+  color: #ffffff;
+}
+
+.edit-profile-form {
+  padding-top: 20px;
+}
+
+/* 이미지 그룹만 세로 정렬 유지 */
+.edit-profile-form .form-group.image-group {
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;  /* 가로폭은 내용에 맞게 */
+  margin: 20px auto; /* 위아래 공간 */
+}
+
+.edit-profile-form .form-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;  /* 수직 중앙 정렬 */
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-profile-form label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  width: 120px; /* 라벨 너비 고정 */
+  margin-right: 15px; /* 라벨과 input 사이 간격 */
+}
+
+/* input 공통 스타일 */
+.edit-profile-form input[type="text"],
+.edit-profile-form input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid;
+  box-sizing: border-box;
+  flex: 1; /* 남은 공간 모두 차지 */
+}
+
+/* 라이트모드 input */
+body.light .edit-profile-form input[type="text"],
+body.light .edit-profile-form input[type="file"] {
+  background-color: #fff;
+  border-color: #000000;
+  color: #000000;
+}
+
+/* 다크모드 input */
+body.dark .edit-profile-form input[type="text"],
+body.dark .edit-profile-form input[type="file"] {
+  background-color: #1e1e1e;
+  border-color: #444444;
+  color: #ffffff;
+}
+
+
+.preview-img {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  padding-right: 180px;
+  margin-top: 30px;
+}
+
+.save-btn, .cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 라이트모드 버튼 */
+body.light .save-btn {
+  background-color: #000;
+  color: #ffffff;
+}
+
+body.light .cancel-btn {
+  background-color: #e0e0e0;
+  color: #000;
+  margin-left: 20px; /* 저장 버튼과 20px 간격 */
+}
+
+/* 다크모드 버튼 */
+body.dark .save-btn {
+  background-color: #ffffff;
+  color: #000; /* 글자색도 바꾸는게 좋음 */
+}
+
+body.dark .cancel-btn {
+  background-color: #555555;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.edit-profile-form textarea.bio-textarea {
+  width: 100%;
+  height: 100px; /* input과 유사한 높이 */
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid;
+  box-sizing: border-box;
+  resize: none; /* 크기 조절 막기 */
+  flex: 1;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+/* 라이트모드 textarea */
+body.light .edit-profile-form textarea.bio-textarea {
+  background-color: #fff;
+  border-color: #000000;
+  color: #000000;
+}
+
+/* 다크모드 textarea */
+body.dark .edit-profile-form textarea.bio-textarea {
+  background-color: #1e1e1e;
+  border-color: #444444;
+  color: #ffffff;
+}

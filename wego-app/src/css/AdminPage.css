@@ -1,0 +1,286 @@
+.admin-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.admin-container h2 {
+  margin-bottom: 20px;
+  margin-top: 80px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #1f1f1f;
+  border: 1px solid #444;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #444;
+}
+
+.admin-table th {
+  background-color: #333;
+  font-weight: bold;
+}
+
+.admin-table td {
+  background-color: #222;
+}
+
+.admin-table button {
+  padding: 6px 10px;
+  margin: 0 4px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.admin-table button:hover {
+  background-color: #666;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pagination button {
+  padding: 6px 10px;
+  background-color: #444;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button.active,
+.pagination button:hover {
+  background-color: #666;
+  font-weight: bold;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #444;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin: 0 4px 4px 0;
+}
+
+/* 공통 버튼 스타일 */
+.search-btn,
+.reset-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+/* 다크모드 */
+.search-btn,
+.reset-btn {
+  background-color: #444;
+  color: #fff;
+}
+
+.search-btn:hover,
+.reset-btn:hover {
+  background-color: #666;
+}
+
+/* 라이트모드 */
+body.light .search-btn,
+body.light .reset-btn {
+  background-color: #e0e0e0;
+  color: #000;
+  border: 1px solid #bbb;
+}
+
+body.light .search-btn:hover,
+body.light .reset-btn:hover {
+  background-color: #ccc;
+}
+
+/* 라이트 모드 전체 배경/텍스트 조정 */
+body.light,
+body.light html {
+  background-color: #ffffff !important;
+  color: #000000;
+}
+
+body.light .admin-container {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light .admin-table th,
+body.light .admin-table td {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light .badge {
+  background-color: #dee2e6;
+  color: #000;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin: 0 4px 4px 0;
+}
+
+body.light .filter-bar input,
+body.light .filter-bar select {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+body.light .admin-table button {
+  background-color: #e0e0e0;
+  color: #000;
+  border: 1px solid #999;
+}
+
+body.light .admin-table button:hover {
+  background-color: #cfcfcf;
+}
+
+body.light .pagination button {
+  background-color: #ddd;
+  color: #000;
+  border: 1px solid #bbb;
+}
+
+body.light .pagination button.active {
+  background-color: #aaa;
+  font-weight: bold;
+}
+
+/* 통계 카드 */
+.admin-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.admin-cards .card {
+  flex: 0 1 22%;               /* 크기 비율 명확히 */
+  max-width: 240px;
+  min-height: 60px;            /* ❌ 줄이기 위해 min-height 제거 또는 수정 */
+  height: 150px;                /* ✅ 내용에 맞춰 자동 */
+  background-color: #222;
+  padding: 6px 12px;           /* ✅ 위아래 padding 줄이기 */
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: flex;                /* ✅ flex 활성화 */
+  flex-direction: column;       /* ✅ 위→아래 배치 */
+  justify-content: center;      /* ✅ 수직 중앙 정렬 */
+  align-items: center;          /* ✅ 수평 중앙 정렬 */
+}
+
+.admin-cards .card h4 {
+  font-size: 14px;             /* ✅ 제목 크기 축소 */
+  color: #ccc;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.admin-cards .card p {
+  font-size: 18px;             /* ✅ 수치 크기 축소 */
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+}
+
+body.light .admin-cards .card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+body.light .admin-cards .card h4 {
+  color: #333;
+}
+
+body.light .admin-cards .card p {
+  color: #000;
+}
+
+/* Top 작성자 리스트 */
+.admin-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.admin-list li {
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #eee;
+}
+
+body.light .admin-list li {
+  color: #111;
+}
+
+/* 차트 박스 */
+.admin-chart-box {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #222;
+  margin-bottom: 30px;
+}
+
+body.light .admin-chart-box {
+  background-color: #f5f5f5;
+  color: #000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* 섹션 제목 */
+.admin-section h3 {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+body.light .admin-section h3 {
+  color: #222;
+  opacity: 1;
+}

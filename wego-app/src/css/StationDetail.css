@@ -1,0 +1,380 @@
+/* ===== 페이지 전체 ===== */
+.station-page {
+    background: #f9fbfd;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+    font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  }
+  
+  /* ===== 중앙 컨테이너 ===== */
+  .station-container {
+    width: 90%;
+    max-width: 980px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    color: #222;
+    transition: all 0.3s ease;
+  }
+  
+  /* ===== 헤더 ===== */
+  .station-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  
+  .station-header h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #0dcaf0; /* 포인트 */
+    margin-bottom: 8px;
+  }
+  
+  .address {
+    font-size: 1rem;
+    color: #666;
+    margin: 4px 0;
+  }
+  
+  .desc {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 8px;
+  }
+  
+  /* ===== 지도 ===== */
+  .station-map {
+    margin: 25px 0 35px;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  
+  /* 탭 버튼 스타일 */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .tab-btn {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 1rem;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+  }
+  
+  .tab-btn:hover {
+    color: #3d3c3c;
+  }
+  
+  /* ✅ 활성 탭 강조 효과 (밑줄 + 색상) */
+  .tab-btn.active {
+    color: #ff766c;
+    font-weight: bold;
+  }
+  
+  .tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 40%;
+    height: 2px;
+    background: #ff766c;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+  
+  .tab-btn:not(.active)::after {
+    width: 0;
+    transition: width 0.3s ease;
+  }
+  
+  /* ✅ 페이지 전체 전환 부드럽게 보이게 */
+  .station-page {
+    transition: opacity 0.4s ease;
+  }
+  
+  
+  /* ===== 카드 레이아웃 ===== */
+  .places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+  }
+  
+  .place-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px;
+    border: 1px solid rgba(13, 202, 240, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+  }
+  
+  .place-card:hover {
+    transform: translateY(-4px);
+    border-color: #0dcaf0;
+    box-shadow: 0 6px 16px rgba(13, 202, 240, 0.15);
+  }
+  
+  .place-name {
+    font-size: 1.1rem;
+    color: #0a7fa1;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .place-name:hover {
+    color: #0dcaf0;
+  }
+  
+  .place-address {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 6px;
+  }
+  
+  .place-distance {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 4px;
+  }
+  
+  /* ===== 상태 텍스트 ===== */
+  .station-loading,
+  .station-error,
+  .station-empty {
+    text-align: center;
+    color: #666;
+    margin-top: 60px;
+    font-size: 1.1rem;
+  }
+  
+  .no-data {
+    text-align: center;
+    color: #999;
+  }
+  
+  /* ===== 반응형 ===== */
+  @media (max-width: 768px) {
+    .station-container {
+      padding: 28px;
+    }
+  
+    .station-header h1 {
+      font-size: 2rem;
+    }
+  
+    .tab-btn {
+      padding: 8px 16px;
+      font-size: 0.95rem;
+    }
+  }
+
+  /* ✅ 대표 이미지 */
+.station-cover {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(13, 202, 240, 0.15);
+    margin-bottom: 30px;
+  }
+  
+  .station-cover img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .station-cover img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ✅ 지도에서 보기 버튼 */
+  .map-actions {
+    text-align: right;
+    margin-top: 8px;
+    margin-bottom: 25px;
+  }
+  
+  .map-view-btn {
+    background: #0dcaf0;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .map-view-btn:hover {
+    background: #0ab9db;
+    box-shadow: 0 4px 12px rgba(13, 202, 240, 0.3);
+  }
+  
+  /* ✅ 이전 / 다음 역 이동 */
+  .station-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  
+  .nav-btn {
+    background: #fff;
+    border: 1.5px solid #0dcaf0;
+    color: #0dcaf0;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: 600;
+  }
+  
+  .nav-btn:hover {
+    background: #0dcaf0;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(13, 202, 240, 0.3);
+  }
+  
+  .station-image-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .station-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* ✅ 이미지 오른쪽 아래에 버튼 오버레이 */
+  .action-buttons-overlay {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    gap: 8px;
+  }
+  
+  /* ✅ PostDetail 버튼 스타일 재활용 */
+  .action-buttons-overlay .save-button,
+  .action-buttons-overlay .share-button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .action-buttons-overlay .save-button {
+    background-color: #ff766c;
+    color: #fff;
+  }
+  .action-buttons-overlay .save-button:hover {
+    background-color: #e45c54;
+  }
+  
+  .action-buttons-overlay .share-button {
+    background-color: #555;
+    color: #fff;
+  }
+  .action-buttons-overlay .share-button:hover {
+    background-color: #333;
+  }
+  
+  /* 🎯 AI 추천 코스 스타일 */
+.recommend-section {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.recommend-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #222;
+}
+
+.recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.recommend-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  transition: all 0.25s ease;
+}
+
+.recommend-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.recommend-icon {
+  font-size: 1.6rem;
+}
+
+.recommend-content h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.recommend-content p {
+  margin-top: 4px;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.no-data {
+  color: #777;
+  font-size: 0.95rem;
+}
+
+/* 🗺 지도 보기 버튼 */
+.view-map-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #494d4e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.view-map-btn:hover {
+  background: #00aaff; 
+  transform: translateY(-2px);
+}

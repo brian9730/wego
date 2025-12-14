@@ -1,0 +1,96 @@
+/* Exhibition.css */
+
+.exhibition {
+  margin-top: 100px;
+}
+.exhibition-page {
+    
+    
+      padding: 120px 2rem 2rem; /* 상단에 100px 패딩 추가 */
+      background-color: #121212;
+    
+  }
+  
+  .exhibition-page h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #fefefe;
+  }
+  
+  .exhibition-category {
+    margin-bottom: 3rem;
+  }
+  
+  .exhibition-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fefefe;
+  }
+  
+  .exhibition-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .exhibition-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .exhibition-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .exhibition-item h4 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .exhibition-item p {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 0.5rem;
+  }
+  
+  .exhibition-section{
+    padding-top: 100px; 
+  }
+
+
+  /* 버튼 */
+  .category-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-buttons button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+.category-buttons button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.exhibition-item {
+  margin-bottom: 20px;
+}
+
+.exhibition-item img {
+  width: 100%;
+  height: auto;
+}

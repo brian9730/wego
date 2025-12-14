@@ -1,0 +1,25 @@
+/* Profile.css */
+
+/* 컨테이너에서 오버레이/로그인폼 제거 */
+.profile-container .joinus-sign-in,
+.profile-container .joinus-overlay-container {
+  display: none !important;
+}
+
+/* 수정폼 전체 보여주기 */
+.profile-container .joinus-sign-up {
+  position: relative;
+  width: 100%;
+  opacity: 1 !important;
+  z-index: 2 !important;
+}
+
+/* 필요 시 추가적인 커스터마이징 */
+.profile-container .joinus-h1 {
+  color: #333;
+}
+
+.profile-container .joinus-button-signup {
+  width: 80%;
+  max-width: 300px;
+}

@@ -1,0 +1,96 @@
+/* src/css/FAQModal.css */
+
+.faq-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+  }
+  
+  .faq-modal {
+    background: #fff;
+    color: #333;
+    width: 70%;
+    max-width: 800px;
+    height: 70%;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .faq-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .faq-modal-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  .faq-modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  .faq-modal-content {
+    margin-top: 20px;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  /* 질문 영역: 번호만 표시 */
+  .faq-question {
+    margin: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+  .faq-question:hover {
+    background: #e8e8e8;
+  }
+  
+  /* 답변 영역: 기본 숨김, 펼쳐질 때 애니메이션 적용 */
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 5px;
+    background: #fafafa;
+    border-left: 3px solid #ddd;
+    padding: 0 10px;
+    border-radius: 4px;
+  }
+  .faq-answer.open {
+    max-height: 300px;
+    padding: 10px;
+  }
+  .faq-answer p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+
+/* Light Mode Overrides */
+body.light .faq-modal { background-color: #fff; color: #222; }
+body.light .faq-question { background: #f1f1f1; }
+body.light .faq-answer { background: #fff; border-left-color: #ccc; }
